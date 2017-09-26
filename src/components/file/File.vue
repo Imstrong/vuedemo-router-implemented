@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>File</div>
+    <div><h2>File</h2></div>
     <div id="content">
       <p>
         <router-link to="/file/1">第一篇</router-link>

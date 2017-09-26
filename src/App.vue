@@ -4,7 +4,7 @@
     <p>
       <router-link to="/file">归档</router-link>
       <router-link to="/user">时间轴</router-link>
-      <router-link to="/user">关于我</router-link>
+      <router-link to="/about">关于我</router-link>
     </p>
     <router-view></router-view>
   </div>

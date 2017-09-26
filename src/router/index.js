@@ -20,7 +20,9 @@ import UserPosts from '../components/Posts.vue'
 
 import File from '../components/file/File.vue'
 import FileHome from '../components/file/FileHome.vue'
+import About from '../components/about/About.vue'
 
+Vue.use(About)
 Vue.use(FileHome)
 
 Vue.use(User)
@@ -48,13 +50,17 @@ export default new Router({
         // when /user/:id/posts is matched
         {path: 'posts', component: UserPosts}
       ]
-    }, {
+    }, {path: '/', redirect: '/file'},
+    {
       path: '/file',
       component: File,
       children: [
         {path: '', component: FileHome},
         {path: ':id', component: FileHome}
       ]
+    }, {
+      path: '/about',
+      component: About
     }
   ]
 })
