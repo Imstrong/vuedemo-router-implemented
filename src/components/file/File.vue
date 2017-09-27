@@ -2,12 +2,33 @@
   <div>
     <div><h2>File</h2></div>
     <div id="content">
-      <p>
-        <router-link to="/file/1">第一篇</router-link>
-        <router-link to="/file/2">第二篇</router-link>
-        <router-link to="/file/3">第三篇</router-link>
-      </p>
+      <div v-for="(kind,index) in kindlist">
+        <router-link :to="kind.link">{{kind.title}}</router-link>
+      </div>
       <router-view></router-view>
     </div>
   </div>
 </template>
+<script>
+  export default {
+    name: 'file',
+    data: function () {
+      return {
+        kindlist: [
+          {
+            title: 'java核心',
+            link: '/kind/1'
+          },
+          {
+            title: '多线程',
+            link: '/kind/2'
+          },
+          {
+            title: '数据结构和算法',
+            link: '/kind/3'
+          }
+        ]
+      }
+    }
+  }
+</script>

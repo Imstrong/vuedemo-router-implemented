@@ -21,7 +21,11 @@ import UserPosts from '../components/Posts.vue'
 import File from '../components/file/File.vue'
 import FileHome from '../components/file/FileHome.vue'
 import About from '../components/about/About.vue'
+import ArticleList from '../components/article/ArticleList.vue'
+import Article from '../components/article/Article.vue'
 
+Vue.use(Article)
+Vue.use(ArticleList)
 Vue.use(About)
 Vue.use(FileHome)
 
@@ -61,6 +65,13 @@ export default new Router({
     }, {
       path: '/about',
       component: About
+    }, {
+      path: '/kind/:id',
+      component: ArticleList
+    },
+    {
+      path: '/article/:id',
+      component: Article
     }
   ]
 })
